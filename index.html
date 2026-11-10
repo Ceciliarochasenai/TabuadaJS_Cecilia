@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABUADA</title>
+
+    <style>
+        .body{
+            background-color: rgb(219, 238, 255);
+        }
+        h1{
+            color: midnightblue;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #numero{
+            background-color: rgb(197, 228, 255);
+            border-radius: 10px;
+            border-color: midnightblue;
+        }
+        .sla{
+            text-align: center;
+        }
+        #mostraResultado{
+            margin-top: 30px;
+            background-color: rgb(189, 224, 255);
+            width: 200px;
+            border-radius: 10px;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="sla">
+        <h1>Escolha um número de 1 a 10, e descubra a tabuada dele</h1>
+
+        <input type="number" id="numero" name="numero">
+        <input type="button" value="calcula" id="calcula">
+
+        <div id="mostraResultado"></div>
+    </div>
+
+    <script>
+        let calcula = document.querySelector("#calcula");
+        calcula.addEventListener("click", result);
+
+        function result(){
+            let number = document.querySelector("#numero")
+
+            let num = Number(number.value)
+
+            let resultado = document.querySelector("#mostraResultado");
+
+            resultado.innerHTML = "<h3>Tabuada do número " + num + "</h3>";
+            
+            for(let i = 1; i <= 10; i++){
+                resultado.innerHTML += num + " x " + i + " = " + (num * i) + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
